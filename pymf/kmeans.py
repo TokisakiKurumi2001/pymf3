@@ -6,7 +6,7 @@ PyMF K-means clustering (unary-convex matrix factorization).
 import numpy as np
 import random
 
-import pymf.dist
+from .dist import vq
 from .base import PyMFBase
 
 __all__ = ["Kmeans"]
@@ -69,7 +69,7 @@ class Kmeans(PyMFBase):
         
     def _update_h(self):                    
         # and assign samples to the best matching centers
-        self.assigned = dist.vq(self.W, self.data)
+        self.assigned = vq(self.W, self.data)
         self.H = np.zeros(self.H.shape)
         self.H[self.assigned, range(self._num_samples)] = 1.0
                 
