@@ -9,6 +9,8 @@ Detailed documentation is available at http://pymf.googlecode.com
 Copyright (C) Christian Thurau, 2010. GNU General Public License (GPL)
 '''
 
+from .dist import *
+
 from .nmf import *
 from .cnmf import *
 from .chnmf import *
